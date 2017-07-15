@@ -16,6 +16,23 @@ namespace Snake
             Point p2 = new Point(4, 5, '#');
             p2.Draw();
 
+            List<Point> pList = new List<Point>();
+            pList.Add(p1);
+            pList.Add(p2);
+
+            List<char> syms = new List<char>();
+            syms.Add('!');
+            syms.Add('@');
+            syms.Add('#');
+            syms.Add('$');
+
+            Console.WriteLine(syms[0]);
+
+            foreach (char i in syms)
+            {
+                Console.WriteLine(i);
+            }
+
             Console.ReadKey();
         }
     }
