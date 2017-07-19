@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Snake
 {
     class Snake : Figure
     {
-        Direction direction;
+
+       public Direction direction;
         public Snake(Point tail, int lenght, Direction _direction)
         {
             direction = _direction;
@@ -38,5 +40,16 @@ namespace Snake
             nextPoint.Move(1, direction);
             return nextPoint;
     }
+        public void HandleKey (ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow & (direction == Direction.UP || direction == Direction.DOWN))
+                direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow & (direction == Direction.UP || direction == Direction.DOWN))
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.DownArrow & (direction == Direction.LEFT || direction == Direction.RIGHT))
+                direction = Direction.DOWN;
+            else if (key == ConsoleKey.UpArrow & (direction == Direction.LEFT || direction == Direction.RIGHT))
+                direction = Direction.UP;
+        }
     }
 }
